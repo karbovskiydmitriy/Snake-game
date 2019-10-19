@@ -12,7 +12,7 @@
 
 # About
 
-This is small contest, where you can test your WinAPI skills. Your task is **Snake Game**, which must be made for **24 hours**.  
+This is small contest, where you can test your **WinAPI** skills. Your task is **Snake Game**, which must be made for **24 hours**.  
 
 ## Requirements
 
