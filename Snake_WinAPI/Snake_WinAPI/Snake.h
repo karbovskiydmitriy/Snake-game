@@ -5,33 +5,46 @@
 
 #include <Windows.h>
 
+#define WINDOW_SIZE 800
+#define CONST_SIZE 16
+
+#define MAIN_CLASS_NAME "MainClass"
+#define CAPTION "Snake"
+#define YOU_WIN "You win!"
+#define CONGRATULATIONS "Congratulations!"
+#define PLAY_AGAIN "Play again?"
+#define ZERO '0'
+#define SPACE ' '
+
+#define Append(destination, source) wcscat_s (destination, BUFFER_SIZE, source);
+
 typedef	unsigned char boolean;
+typedef unsigned char byte;
+
 #define true 1
 #define false 0
-#define windowSize 800
-#define constSize 16
 
-typedef struct _point {
+typedef struct _Point
+{
 	byte x, y;
-} point;
+} Point;
 
-typedef enum _direction {
+typedef enum _Direction
+{
 	up,
 	right,
 	down,
 	left
-} direction;
+} Direction;
 
-LRESULT WindowProc (HWND, UINT, WPARAM, LPARAM);
-void Create (HINSTANCE);
+INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
+LRESULT WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void Init();
 void Step();
 void Draw();
 void End();
-void RandomPoint (point *);
-void GetStringFromInt (int value, wchar_t *result);
-boolean IsInSnake(point p);
-
-#define Append(destination, source) wcscat_s (destination, BUFFER_SIZE, source);
+void RandomPoint(Point *p);
+void GetStringFromInt(int value, TCHAR *result);
+boolean IsInSnake(Point p);
 
 #endif // __SNAKE_H__
