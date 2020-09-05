@@ -1,3 +1,8 @@
+#pragma once
+
+#ifndef __SNAKE_H__
+#define __SNAKE_H__
+
 #include <Windows.h>
 
 typedef	unsigned char boolean;
@@ -28,3 +33,5 @@ void GetStringFromInt (int value, wchar_t *result);
 boolean IsInSnake(point p);
 
 #define Append(destination, source) wcscat_s (destination, BUFFER_SIZE, source);
+
+#endif // __SNAKE_H__
